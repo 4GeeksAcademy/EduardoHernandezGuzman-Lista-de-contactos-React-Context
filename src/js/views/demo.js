@@ -8,6 +8,8 @@ import "../../styles/demo.css";
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
+	
+
 	return (
 		<div className="container">
 			<ul className="list-group">
@@ -27,6 +29,7 @@ export const Demo = () => {
 									<br />
 									{item.email}
 								</div>
+								<button onClick={()=> actions.borrarContacto(item.id)}>Eliminar contacto</button>
 							</li>
 						</>
 					);

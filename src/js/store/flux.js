@@ -48,6 +48,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
+			
+			//Borrar un contacto de la agenda
+			borrarContacto: (indexABorrar) => {
+				
+
+				var requestOptions = {
+					method: 'DELETE',
+					redirect: 'follow'
+				  };
+				  
+				  fetch("https://playground.4geeks.com/apis/fake/contact/" + indexABorrar, requestOptions)
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
+					
+				
+			},
+
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
