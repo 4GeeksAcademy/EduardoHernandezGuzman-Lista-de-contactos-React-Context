@@ -20,23 +20,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// ],
 				contacts: [
 					{
-						full_name: "Pepe",
-						address: "Calle de Pepe 23",
-						phone: "432984732894",
-						email: "pepe@mail.com"
-					},
-					{
-						full_name: "Luis",
-						address: "Calle de Luis 23",
-						phone: "432984732894",
-						email: "luis@mail.com"
-					},
-					{
-						full_name: "David",
-						address: "Calle de David 23",
-						phone: "432984732894",
-						email: "david@mail.com"
+						full_name: "",
+						address: "",
+						phone: "",
+						email: ""
 					}
+				
 				]
 			},
 		actions: {
@@ -45,6 +34,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadSomeData: () => {
+
+			//Traerme la agenda	
+				var requestOptions = {
+					method: 'GET',
+					redirect: 'follow'
+				  };
+				  fetch("https://playground.4geeks.com/apis/fake/contact/agenda/miagenda", requestOptions)
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
+					
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
