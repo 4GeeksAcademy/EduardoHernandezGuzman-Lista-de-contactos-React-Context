@@ -1,9 +1,11 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+// import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 
 export const Home = () => (
 	<div className="text-center mt-5">
+		<h3>Nuevo contacto</h3>
+
 		{/* <h1>Hello Rigo!</h1>
 		<p>
 			<img src={rigoImage} />
