@@ -1,19 +1,44 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
+			// demo: [
+			// 	{
+			// 		title: "FIRST",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	},
+			// 	{
+			// 		title: "SECOND",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	},
+			// 	{
+			// 		title: "TERCERO",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	}
+			// ],
+				contacts: [
+					{
+						full_name: "Pepe",
+						address: "Calle de Pepe 23",
+						phone: "432984732894",
+						email: "pepe@mail.com"
+					},
+					{
+						full_name: "Luis",
+						address: "Calle de Luis 23",
+						phone: "432984732894",
+						email: "luis@mail.com"
+					},
+					{
+						full_name: "David",
+						address: "Calle de David 23",
+						phone: "432984732894",
+						email: "david@mail.com"
+					}
+				]
+			},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
