@@ -29,7 +29,8 @@ export const Demo = () => {
 									<br />
 									{item.email}
 								</div>
-								<button className="btn btn-danger" onClick={()=> actions.borrarContacto(item.id)}>Eliminar contacto</button>
+								<button className="btn btn-danger" onClick={() => {actions.borrarContacto(item.id)}}>Eliminar contacto</button>
+
 							</li>
 							
 						</>

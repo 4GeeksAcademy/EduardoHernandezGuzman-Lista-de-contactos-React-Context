@@ -33,6 +33,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
+
 			loadSomeData: () => {
 
 			//Traerme la agenda	
@@ -47,7 +49,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+
+				
 			},
+
+			
+			
+		
 			
 			//Borrar un contacto de la agenda
 			borrarContacto: (indexABorrar) => {
@@ -60,12 +68,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  fetch("https://playground.4geeks.com/apis/fake/contact/" + indexABorrar, requestOptions)
 					.then(response => response.json())
 					.then(data => setStore({ contacts: data }))
-				
-				
+					setTimeout(() => {location.reload();}, 1000);
+					
+					
 				
 				
 			},
 			
+
 			//Borrar TODOS los contactos de la agenda
 			borrarTodosLosContactos: () => {
 				
@@ -77,6 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  fetch("https://playground.4geeks.com/apis/fake/contact/agenda/miagenda", requestOptions)
 					.then(response => response.json())
 					.then(data => setStore({ contacts: data }))
+					setTimeout(() => {location.reload();}, 1000);
 				},
 
 			
