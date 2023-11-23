@@ -52,7 +52,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Borrar un contacto de la agenda
 			borrarContacto: (indexABorrar) => {
 				
-
 				var requestOptions = {
 					method: 'DELETE',
 					redirect: 'follow'
@@ -61,9 +60,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  fetch("https://playground.4geeks.com/apis/fake/contact/" + indexABorrar, requestOptions)
 					.then(response => response.json())
 					.then(data => setStore({ contacts: data }))
-					
+				
+				
+				
 				
 			},
+			
+			//Borrar TODOS los contactos de la agenda
+			borrarTodosLosContactos: () => {
+				
+				var requestOptions = {
+					method: 'DELETE',
+					redirect: 'follow'
+				  };
+				  
+				  fetch("https://playground.4geeks.com/apis/fake/contact/agenda/miagenda", requestOptions)
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
+				},
+
+			
 
 
 			changeColor: (index, color) => {

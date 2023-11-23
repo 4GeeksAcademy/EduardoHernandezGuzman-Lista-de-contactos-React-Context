@@ -29,12 +29,14 @@ export const Demo = () => {
 									<br />
 									{item.email}
 								</div>
-								<button onClick={()=> actions.borrarContacto(item.id)}>Eliminar contacto</button>
+								<button className="btn btn-danger" onClick={()=> actions.borrarContacto(item.id)}>Eliminar contacto</button>
 							</li>
+							
 						</>
 					);
 				})}
 			</ul>
+			<button className="btn btn-danger" onClick={()=> actions.borrarTodosLosContactos()}>Borrar todos los contactos</button>
 
 			{/* <ul className="list-group">
 				{store.demo.map((item, index) => {
