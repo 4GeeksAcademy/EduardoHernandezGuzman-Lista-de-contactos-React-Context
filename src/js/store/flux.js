@@ -38,13 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadSomeData: () => {
 
 			//Traerme la agenda	
-				var requestOptions = {
-					method: 'GET',
-					redirect: 'follow'
-				  };
-				  fetch("https://playground.4geeks.com/apis/fake/contact/agenda/miagenda", requestOptions)
-					.then(response => response.json())
-					.then(data => setStore({ contacts: data }))
+			
 			
 					
 				/**
@@ -52,6 +46,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
 
 			},
+
+
+			traerAgenda: () => {
+				var requestOptions = {
+					method: 'GET',
+					redirect: 'follow'
+				  };
+				  fetch("https://playground.4geeks.com/apis/fake/contact/agenda/miagenda", requestOptions)
+					.then(response => response.json())
+					.then(data => setStore({ contacts: data }))
+				},
 
 			
 			
@@ -69,6 +74,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => setStore({ contacts: data }))
 					setTimeout(() => {location.reload();}, 1000);
+					
 					
 					
 				
